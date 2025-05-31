@@ -36,6 +36,15 @@
             margin-bottom: 10px;
         }
 
+        .portrait {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+            object-fit: cover;
+            border: 3px solid #2c3e50;
+        }
+
         .social-links {
             margin: 20px 0;
         }
@@ -129,12 +138,18 @@
             .pdf-container {
                 height: 600px;
             }
+
+            .portrait {
+                width: 150px;
+                height: 150px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Manuel Lancastre</h1>
+        <img src="portrait.JPG" alt="Manuel Lancastre" class="portrait">
         <div class="nav-links">
             <a href="index.html">Resume</a>
             <a href="projects.html">Projects</a>
