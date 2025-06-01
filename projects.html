@@ -36,6 +36,36 @@
             margin-bottom: 10px;
         }
 
+        .bio {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .bio p {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .bio ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .bio li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .bio li:before {
+            content: "•";
+            color: #2c3e50;
+            position: absolute;
+            left: 0;
+        }
+
         .portrait {
             width: 200px;
             height: 200px;
@@ -159,6 +189,14 @@
 <body>
     <header>
         <h1>Manuel Lancastre</h1>
+        <div class="bio">
+            <p>Machine Learning Engineer and Reinforcement Learning Enthusiast specialized in improving current state of the art Machine Learning models and adapting them to new applications. Projects below include:</p>
+            <ul>
+                <li>Imitation and Reinforcement Learning methods for transtibial prosthesis control (open source).</li>
+                <li>Various implementations of RL models for common and challenging benchmarks (open source).</li>
+                <li>A food app using specialized computer vision, large language models, and agentic systems to tackle interesting problems such as storing ingredients through receipt scanning, meal tracking, recipe recommending (either through ingredients bought or local restaurants), and more. This one isn't open source but hopefully available soon. Reach out if you're interested!</li>
+            </ul>
+        </div>
         <img src="portrait.JPG" alt="Manuel Lancastre" class="portrait">
         <div class="nav-links">
             <a href="index.html">Resume</a>
