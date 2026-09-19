@@ -151,12 +151,89 @@
             padding-bottom: 10px;
         }
 
-        .pdf-container {
-            width: 100%;
-            height: 800px;
-            margin: 20px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .resume-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0 10px;
+        }
+
+        .resume-block {
+            margin-top: 30px;
+        }
+
+        .resume-block h3 {
+            color: #2c3e50;
+            font-size: 1.25em;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
+        }
+
+        .entry {
+            margin-bottom: 26px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 4px 16px;
+            margin-bottom: 8px;
+        }
+
+        .entry-head h4 {
+            color: #2c3e50;
+            font-size: 1.05em;
+        }
+
+        .entry-meta {
+            color: #667;
+            font-size: 0.85em;
+            white-space: nowrap;
+        }
+
+        .entry ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .entry li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .entry li:before {
+            content: "\2022";
+            color: #2c3e50;
+            position: absolute;
+            left: 2px;
+        }
+
+        .entry a {
+            color: #0077b5;
+        }
+
+        .skills {
+            list-style: none;
+        }
+
+        .skills li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .skills strong {
+            color: #2c3e50;
         }
 
         .download-button {
@@ -212,8 +289,25 @@
                 max-width: 280px;
             }
 
-            .pdf-container {
-                height: 600px;
+            .resume-section {
+                padding: 20px 18px;
+            }
+
+            .resume-actions {
+                flex-direction: column;
+            }
+
+            .resume-actions a {
+                margin: 0;
+                text-align: center;
+            }
+
+            .entry-head {
+                flex-direction: column;
+            }
+
+            .entry-meta {
+                white-space: normal;
             }
 
             .portrait {
@@ -250,10 +344,97 @@
 
     <main class="resume-section">
         <h2>Resume</h2>
-        <a href="resume.pdf" class="download-button" download>Download Resume</a>
-        <div class="pdf-container">
-            <embed src="resume.pdf" type="application/pdf" width="100%" height="100%" />
+        <div class="resume-actions">
+            <a href="resume.pdf" class="download-button" download>Download Resume (PDF)</a>
+            <a href="resume.pdf" class="download-button" target="_blank" rel="noopener">Open PDF in new tab</a>
         </div>
+
+        <section class="resume-block">
+            <h3>Experience</h3>
+            <div class="entry">
+                <div class="entry-head">
+                    <h4>Software Engineer &middot; Oracle (Opower)</h4>
+                    <span class="entry-meta">Aug. 2025 &ndash; Present &middot; Boston, MA</span>
+                </div>
+                <ul>
+                    <li>Shipped the AMI Publisher, streaming usage data in Apache Iceberg format for millions of meters across utility partners, with an open-source consumption guide and automated performance testing to match.</li>
+                    <li>Building an MCP server that exposes disaggregation insights and billing/account data as tools for a customer-facing conversational agent that answers live billing questions.</li>
+                    <li>Built an autonomous on-call agent (Codex SDK) that triages and resolves incidents end to end, cutting manual on-call time by roughly 80%.</li>
+                    <li>Own the deep-learning pipelines powering Opower&rsquo;s per-appliance energy disaggregation, and led the expansion of coverage to 4.6M business sites alongside the 45M+ households already served.</li>
+                    <li>AI Ambassador: built internal Codex skills and plugins adopted by hundreds of engineers, saving thousands of hours org-wide.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-block">
+            <h3>Projects</h3>
+            <div class="entry">
+                <div class="entry-head">
+                    <h4>Adaptive Prosthesis Control via Deep Imitation Learning</h4>
+                    <span class="entry-meta">2025 &middot; Python, PyTorch, MuJoCo</span>
+                </div>
+                <ul>
+                    <li>Pioneered a two-agent framework using Variational Adversarial Imitation Learning (VAIL) for biomechanically accurate transtibial prosthesis control, achieving better gait mimicry than traditional finite-state-machine approaches.</li>
+                    <li>Ran a comparative study of imitation learning against deep RL (PPO) for ankle-level assistive control; imitation learning produced 3x longer stable locomotion in physics-informed MuJoCo simulations.</li>
+                    <li>Kept performance robust under progressive sensor limitation, from 36 down to 16 state observations, a 55% reduction in input dimensionality.</li>
+                    <li><a href="https://ez-blue.github.io/ILRL_prosthesis_control/" target="_blank" rel="noopener">Project site</a> &middot; <a href="https://github.com/JintongHe/AIE_Project_Team1" target="_blank" rel="noopener">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-head">
+                    <h4>Nutritio &middot; Edge-First AI Nutrition Platform</h4>
+                    <span class="entry-meta">2025 &middot; Python, PyTorch, Transformers, React</span>
+                </div>
+                <ul>
+                    <li>Built Nutritio into a &ldquo;ChatGPT for food&rdquo;: one conversational agent that lets people track meals, plan groceries, and get restaurant picks by talking to it, instead of juggling separate apps.</li>
+                    <li>Designed the agent&rsquo;s tool-calling architecture across 20+ tools, backed by persistent SQLite/Supabase state that gives the agent durable memory of a user&rsquo;s pantry, goals, and history.</li>
+                    <li>Fine-tuned a custom Gemma 3-1B architecture with regression heads for multi-target nutrient prediction, a 4x accuracy improvement over the zero-shot baseline.</li>
+                    <li>Built a live restaurant-recommendation pipeline (web discovery plus menu extraction) that filters real menus by dietary goals and allergens, validated with an automated eval against real listings.</li>
+                </ul>
+            </div>
+            <p style="margin-top: 10px;"><a href="projects.html">See all projects &rarr;</a></p>
+        </section>
+
+        <section class="resume-block">
+            <h3>Education</h3>
+            <div class="entry">
+                <div class="entry-head">
+                    <h4>M.S. in Artificial Intelligence Engineering</h4>
+                    <span class="entry-meta">Jan. 2024 &ndash; May 2025</span>
+                </div>
+                <ul>
+                    <li>Carnegie Mellon University, Pittsburgh, PA.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="entry-head">
+                    <h4>B.S. in Mechanical Engineering</h4>
+                    <span class="entry-meta">Aug. 2020 &ndash; May 2024</span>
+                </div>
+                <ul>
+                    <li>Carnegie Mellon University, Pittsburgh, PA. University Honors, GPA 3.5.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="resume-block">
+            <h3>Technical Skills</h3>
+            <ul class="skills">
+                <li><strong>Languages:</strong> Python, Java, C/C++, SQL, JavaScript/TypeScript, R, MATLAB</li>
+                <li><strong>ML / AI:</strong> PyTorch, TensorFlow, JAX, Hugging Face, MuJoCo, Apache Iceberg, Pandas, NumPy, LangGraph</li>
+                <li><strong>Agents &amp; LLMs:</strong> Codex SDK, MCP, Anthropic API, prompt engineering, agent evaluation, behavior cloning</li>
+                <li><strong>Frameworks &amp; Tools:</strong> React, FastAPI, Node.js, Docker, Kubernetes, AWS, OCI, Grafana, Splunk, Git</li>
+            </ul>
+        </section>
+
+        <section class="resume-block">
+            <h3>Contact</h3>
+            <ul class="skills">
+                <li><strong>Email:</strong> <a href="mailto:manulancastre@gmail.com">manulancastre@gmail.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/manuellancastre" target="_blank" rel="noopener">linkedin.com/in/manuellancastre</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/lancastre22" target="_blank" rel="noopener">github.com/lancastre22</a></li>
+            </ul>
+        </section>
     </main>
 </body>
 </html> 
